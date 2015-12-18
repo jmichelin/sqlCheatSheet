@@ -1,0 +1,18 @@
+--
+-- Table structure for table `new_table`
+--
+
+CREATE TABLE IF NOT EXISTS `new_table` (
+  `recordID` int(11) NOT NULL AUTO_INCREMENT,
+  `recordGUID` char(32) CHARACTER SET latin1 COLLATE latin1_bin DEFAULT NULL,
+  `basicVarchar` varchar(255) DEFAULT NULL,
+  `recordCreateDateTime` datetime NOT NULL,
+  `recordUpdateTimestamp` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `basicINT` int(11) DEFAULT NULL,
+  `basicText` text,
+  `basicLongText` longtext NOT NULL,
+  `basicChar` char(32) NOT NULL,
+  `basicBlob` blob NOT NULL,
+  PRIMARY KEY (`recordID`),
+  UNIQUE KEY `recordID` (`recordID`,`recordGUID`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COMMENT='table comments go here' AUTO_INCREMENT=1 ;
